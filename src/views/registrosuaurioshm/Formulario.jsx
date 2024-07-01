@@ -56,6 +56,7 @@ const Formulario = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(name,value)
     setDatos({
       ...datos,
       [name]: value
@@ -104,10 +105,11 @@ const Formulario = () => {
                   ) : key === 'sexo' || key === 'nivelEstudio' || key === 'estadoCivil' ? (
                     <select id={key} name={key} value={value} onChange={handleChange} className="text-black form-select text-sm cursor-pointer p-1 border rounded w-full">
                       <option value="">Seleccionar</option>
-                      {/* Opciones dinámicas para los selects */}
+                      {key === 'sexo' && <><option value="M">MACULINO</option>
+                                        <option value="F">FEMENINO</option></>}
                     </select>
                   ) : (
-                    <input type="text" id={key} name={key} value={value} onChange={handleChange} className="text-white form-input border rounded w-full" />
+                    <input type="text" id={key} name={key} value={value} onChange={handleChange} className="text-black form-input border rounded w-full" />
                   )}
                 </div>
               ))}
