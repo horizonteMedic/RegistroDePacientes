@@ -2,21 +2,19 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import Login from './views/Login/Login.jsx';
-import PanelPrincipal from './views/PanelPrincipal/Panelprincipal.jsx';
+import Formulario from './views/registrosuaurioshm/Formulario.jsx';
 import Footer from './Components/Footer.jsx';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleLogin = () => {
+  const handleFormulario = () => {
     setIsLoggedIn(true);
   };
 
   return (
     <React.StrictMode>
-      {!isLoggedIn && <Login onLogin={handleLogin} />}
-      {isLoggedIn && <PanelPrincipal isLoggedIn={isLoggedIn} />} 
+      {!isLoggedIn && <Formulario onFormulario={handleFormulario} />}
       {isLoggedIn && <Footer />} 
     </React.StrictMode>
   );
